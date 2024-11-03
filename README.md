@@ -89,9 +89,7 @@ A estrutura principal do projeto é organizada da seguinte forma:
 
 ## 🛠️ Funcionalidades Futuras
 
-- **Filtros Avançados**: Filtragem de candidatos por habilidades, experiência, e localização.
-- **Relatórios**: Geração de relatórios com gráficos e estatísticas dos candidatos.
-- **Notificações**: Envio de notificações para candidatos e recrutadores.
+- **Filtros Avançados**: Filtragem de candidatos por habilidades e nome.
 
 ---
 
