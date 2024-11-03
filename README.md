@@ -60,11 +60,11 @@ Aqui estão os principais endpoints da API para gerenciar candidatos.
 
 ```json
 {
-  "nome": "João Silva",
-  "email": "joao.silva@example.com",
-  "telefone": "123456789",
-  "cargo": "Desenvolvedor"
+    "nome": "Filipe Almeida",
+    "habilidades": [ "java", "python", "css" ],
+    "status": "Ativo"
 }
+
 ```
 
 ---
