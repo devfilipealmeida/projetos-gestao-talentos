@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  app1:
+    build:
+      context: ./gestaotalentos-front
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - shared_network
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: talentos1234
+      POSTGRES_DB: talentos
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - shared_network
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  app2:
+    build:
+      context: ./gestaotalentos
+      dockerfile: Dockerfile
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: talentos1234
+      DB_NAME: talentos
+    ports:
+      - "8080:8080"
+    networks:
+      - shared_network
+
+networks:
+  shared_network:
+
+volumes:
+  db_data:

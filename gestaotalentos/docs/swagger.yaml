@@ -1,0 +1,9 @@
+basePath: /
+host: localhost:8080
+info:
+  contact: {}
+  description: API para gerenciar candidatos, autenticação e autorização.
+  title: API de Gestão de Talentos
+  version: "1.0"
+paths: {}
+swagger: "2.0"
